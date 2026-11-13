@@ -1,0 +1,60 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Workbench architecture</title>
+  <desc id="desc">The UI shell talks to a small host interface. The same workbench data can be served by a web adapter, OpenChamber, DSH or OpenCode.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C96442"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="430" rx="26" fill="#F8FAFC"/>
+
+  <g id="header" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">
+    <text x="64" y="54" font-size="28" font-weight="700" fill="#0F172A">一个壳，三条边界</text>
+    <text x="64" y="84" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" fill="#64748B">UI, data and host stay separate.</text>
+  </g>
+
+  <g id="core" transform="translate(64 116)">
+    <rect width="300" height="196" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="700" fill="#0F172A">core/</text>
+    <text x="20" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#64748B">UI SHELL</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">4 modes</text>
+    <text x="20" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">2 rows of filters</text>
+    <text x="20" y="154" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">full-width list + detail</text>
+    <text x="20" y="182" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">Markdown + annotations</text>
+  </g>
+
+  <g id="host" transform="translate(420 150)">
+    <rect width="300" height="128" rx="12" fill="#0F172A"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#F8FAFC">window.workbenchHost</text>
+    <text x="20" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#94A3B8">readFile / writeFile</text>
+    <text x="20" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#94A3B8">loadConfig / loadIndex</text>
+    <text x="20" y="110" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#94A3B8">sendToAgent / openExternal</text>
+  </g>
+
+  <g id="adapters" transform="translate(776 116)">
+    <rect width="360" height="196" rx="12" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="700" fill="#0F172A">adapters/</text>
+    <text x="20" y="62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#64748B">HOST</text>
+    <text x="20" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">OpenChamber</text>
+    <text x="20" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">Web / browser</text>
+    <text x="20" y="154" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">DSH</text>
+    <text x="20" y="182" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#334155">OpenCode / custom shell</text>
+  </g>
+
+  <g id="connections" stroke="#C96442" stroke-width="2" fill="none">
+    <line x1="364" y1="214" x2="410" y2="214" marker-end="url(#arrow)"/>
+    <line x1="720" y1="214" x2="766" y2="214" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="data" transform="translate(64 340)">
+    <rect width="1072" height="50" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+    <text x="20" y="31" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="700" fill="#0F172A">workbench/</text>
+    <text x="142" y="31" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#64748B">index.json  ·  annotations.json  ·  reports.json  ·  items/</text>
+    <text x="800" y="31" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#94A3B8">shared data contract</text>
+  </g>
+
+  <text x="64" y="414" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#64748B">same shell · different data · different host</text>
+</svg>
+
