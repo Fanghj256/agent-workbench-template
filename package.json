@@ -6,7 +6,7 @@
   "description": "A host-agnostic starter kit for a personal workbench side panel: four modes, two rows of filters, a full-width list, a Markdown reader, and an editable annotation layer.",
   "scripts": {
     "start": "node server/server.mjs",
-    "check": "node --check server/server.mjs && node --check core/app.js && node --check core/host.js && node --check core/markdown.js"
+    "check": "node --check server/server.mjs && node --check core/app.js && node --check core/host.js && node --check core/markdown.js && node --check adapters/openchamber/panel/main.js"
   },
   "engines": {
     "node": ">=18"
