@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="Agent Workbench Template：四模式侧栏、两行筛选、Markdown 阅读与批注层">
 </p>
 
