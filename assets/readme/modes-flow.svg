@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="360" viewBox="0 0 1200 360"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Agent Workbench 4 Views and Read-Write Split</title>
+  <desc id="desc">Four views: Today, Library, Detail with read-only source and writable annotations, and Reports and Settings.</desc>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B4552F"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="360" rx="18" fill="#F6F3EC"/>
+  <rect x="0.5" y="0.5" width="1199" height="359" rx="18" fill="none" stroke="#E2DBD1"/>
+
+  <g id="header" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">
+    <text x="56" y="54" font-size="26" font-weight="700" fill="#24201C">四个常用视图，各管一件事</text>
+    <text x="56" y="84" font-size="18" fill="#6D665D">看今日重点、去资料库筛条目、在详情页记判断，最后整理成报告</text>
+  </g>
+
+  <g id="mode-1" transform="translate(56 112)">
+    <rect width="246" height="156" rx="8" fill="#FFFDFA" stroke="#E2DBD1" stroke-width="1.2"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="600" fill="#B4552F">01 今日</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="24" font-weight="700" fill="#24201C">先看重点</text>
+    <text x="20" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#4E4842">近 14 天新增与待办</text>
+    <text x="20" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#6D665D">临近截止提醒</text>
+  </g>
+
+  <g id="mode-2" transform="translate(336 112)">
+    <rect width="246" height="156" rx="8" fill="#FFFDFA" stroke="#E2DBD1" stroke-width="1.2"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="600" fill="#B4552F">02 资料库</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="24" font-weight="700" fill="#24201C">组合筛选</text>
+    <text x="20" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#4E4842">两行标签快速收敛</text>
+    <text x="20" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#6D665D">窄栏不折行可滑动</text>
+  </g>
+
+  <g id="mode-3" transform="translate(616 112)">
+    <rect width="246" height="156" rx="8" fill="#F8ECE4" stroke="#B4552F" stroke-width="1.8"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="600" fill="#8D3F20">03 详情与批注</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="24" font-weight="700" fill="#24201C">读原文 · 记判断</text>
+    <text x="20" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#24201C">原文只读展示</text>
+    <text x="20" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#8D3F20">批注单独存不覆盖</text>
+  </g>
+
+  <g id="mode-4" transform="translate(896 112)">
+    <rect width="248" height="156" rx="8" fill="#FFFDFA" stroke="#E2DBD1" stroke-width="1.2"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="600" fill="#B4552F">04 报告与设置</text>
+    <text x="20" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="24" font-weight="700" fill="#24201C">沉淀输出</text>
+    <text x="20" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#4E4842">浏览周报与专题</text>
+    <text x="20" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="20" fill="#6D665D">发给对话 · 查状态</text>
+  </g>
+
+  <g id="flow-arrows" stroke="#B4552F" stroke-width="2" fill="none">
+    <line x1="306" y1="190" x2="328" y2="190" marker-end="url(#arr)"/>
+    <line x1="586" y1="190" x2="608" y2="190" marker-end="url(#arr)"/>
+    <line x1="866" y1="190" x2="888" y2="190" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- Quiet warm paper footer strip instead of heavy black slab -->
+  <g id="rw-contract" transform="translate(56 292)">
+    <rect width="1088" height="44" rx="6" fill="#EDE7DC" stroke="#DCD4C8"/>
+    <text x="22" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#24201C">content.md（只读）</text>
+    <text x="256" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#B4552F">+</text>
+    <text x="286" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#8D3F20">annotations.json（可写覆盖层）</text>
+    <text x="720" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-size="18" fill="#6D665D">重新导入数据时，人工批注依然保留</text>
+  </g>
+</svg>

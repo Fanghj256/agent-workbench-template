@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="460" viewBox="0 0 1200 460"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Agent Workbench Template</title>
+  <desc id="desc">A host-agnostic side-panel workbench starter kit on a warm paper canvas, pairing plain-language value with real desktop and 420px sidebar screenshots.</desc>
+
+  <defs>
+    <clipPath id="clip-desktop">
+      <rect x="526" y="42" width="496" height="316" rx="8"/>
+    </clipPath>
+    <clipPath id="clip-sidebar">
+      <rect x="930" y="68" width="214" height="350" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- Warm paper background matching core/styles.css -->
+  <rect width="1200" height="460" rx="18" fill="#F6F3EC"/>
+  <rect x="0.5" y="0.5" width="1199" height="459" rx="18" fill="none" stroke="#E2DBD1"/>
+
+  <!-- Left Editorial Block: Clean, no clutter, no orphan corner tags -->
+  <g id="title-block" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <!-- Brand Mark [W] -->
+    <g transform="translate(60 56)">
+      <rect width="32" height="32" rx="7" fill="#B4552F"/>
+      <path d="M7 10l3.4 12h3.2L16 15.1 18.4 22h3.2L25 10h-3.4l-1.9 8.2L17.6 10h-3.2l-2.1 8.2L10.4 10z" fill="#FFFDFA"/>
+      <text x="44" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" font-weight="600" letter-spacing="1.2" fill="#6D665D">AGENT WORKBENCH TEMPLATE</text>
+    </g>
+
+    <!-- Short signature accent rule -->
+    <rect x="60" y="106" width="40" height="3" rx="1.5" fill="#B4552F"/>
+
+    <text x="60" y="170" font-size="48" font-weight="700" fill="#24201C">给 Agent 侧栏</text>
+    <text x="60" y="230" font-size="48" font-weight="700" fill="#24201C">配一个顺手工作台</text>
+
+    <text x="60" y="288" font-size="22" fill="#4E4842">四个视图 · 两行筛选 · Markdown 阅读</text>
+    <text x="60" y="324" font-size="22" fill="#6D665D">原文只读、批注单独存，换个宿主照样能跑。</text>
+
+    <!-- Quiet flat footer line (no pill boxes) -->
+    <line x1="60" y1="378" x2="468" y2="378" stroke="#E2DBD1" stroke-width="1"/>
+    <text x="60" y="410" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#6D665D">Node 18+  ·  OpenChamber / Web / DSH</text>
+  </g>
+
+  <!-- Right Real UI Proof: Cleanly framed, zero extra floating badges -->
+  <g id="real-proof">
+    <!-- Subtle warm paper shadow plane -->
+    <rect x="534" y="50" width="496" height="316" rx="8" fill="#E7E0D5"/>
+    <image href="desktop-library.png" x="526" y="42" width="496" height="316" preserveAspectRatio="xMidYMin slice" clip-path="url(#clip-desktop)"/>
+    <rect x="526" y="42" width="496" height="316" rx="8" fill="none" stroke="#CFC6BA" stroke-width="1.2"/>
+
+    <!-- Foreground 420px Sidebar -->
+    <rect x="938" y="76" width="214" height="350" rx="10" fill="#DDD5C8"/>
+    <image href="sidebar-detail.png" x="930" y="68" width="214" height="350" preserveAspectRatio="xMidYMin slice" clip-path="url(#clip-sidebar)"/>
+    <rect x="930" y="68" width="214" height="350" rx="10" fill="none" stroke="#B4552F" stroke-width="1.5"/>
+  </g>
+</svg>
