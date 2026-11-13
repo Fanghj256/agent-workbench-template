@@ -1,0 +1,44 @@
+{
+  "name": "agent-workbench-openchamber",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agent workbench adapter for OpenChamber: four tabs, horizontal filters, full-width list, Markdown reader, annotations and reports.",
+  "openchamber": {
+    "apiVersion": 1,
+    "engines": {
+      "openchamber": ">=2.3.3"
+    },
+    "id": "agent-workbench-openchamber",
+    "name": "工作台",
+    "icon": "layout-grid",
+    "contributes": {
+      "panel": {
+        "entry": "panel/index.html"
+      },
+      "page": true,
+      "attach": {
+        "mode": "dialog",
+        "entry": "dialog/index.html"
+      },
+      "capabilities": [
+        "files",
+        "prompt"
+      ],
+      "opencodePlugin": "plugin"
+    }
+  },
+  "scripts": {
+    "build": "esbuild src/panel/main.js --bundle --format=iife --platform=browser --outfile=panel/main.js",
+    "check": "node --check panel/main.js && node --check plugin/index.js",
+    "check:manifest": "node scripts/check-manifest.mjs",
+    "test:plugin": "node scripts/test-plugin.mjs"
+  },
+  "devDependencies": {
+    "@openchamber/sdk": "^2.7.0",
+    "esbuild": "^0.28.2"
+  },
+  "dependencies": {
+    "markdown-it": "^15.0.3"
+  }
+}

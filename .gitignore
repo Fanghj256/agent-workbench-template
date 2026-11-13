@@ -1,0 +1,30 @@
+# Dependencies (the template itself has none)
+node_modules/
+
+# Runtime backups and temp files from PUT /api/annotations
+workbench/annotations.json.bak
+workbench/.annotations.*.tmp
+*.tmp
+*.bak
+content_cache.json
+05_归档/
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local.yaml
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+
+# User annotations written by the OpenChamber adapter
+workbench/_notes/

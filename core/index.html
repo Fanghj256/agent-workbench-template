@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="一个宿主无关的侧栏工作台模板：今日、资料库、报告、设置，全宽列表与可编辑批注层。" />
+    <title>工作台</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <header class="top">
+        <div class="brand">
+          <span class="mark" id="brand-mark" aria-hidden="true">W</span>
+          <span class="brand-name" id="brand-name">工作台</span>
+        </div>
+        <div class="search-wrap">
+          <input
+            id="search"
+            class="search"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="搜索标题、机构、文号或关键词"
+            aria-label="搜索条目"
+          />
+          <kbd class="kbd" aria-hidden="true">/</kbd>
+        </div>
+        <button id="reload" class="btn ghost" type="button" title="重新读取数据">刷新</button>
+        <button id="close" class="btn ghost close" type="button" title="关闭" aria-label="关闭" hidden>×</button>
+      </header>
+
+      <nav id="tabs" class="tabs" role="tablist" aria-label="工作台模式"></nav>
+      <div id="filters" class="filters"></div>
+
+      <main id="main" class="main" tabindex="-1" aria-busy="true">
+        <div class="loading-page">正在读取工作台数据…</div>
+      </main>
+
+      <footer class="foot">
+        <span id="status">初始化</span>
+        <span id="meta"></span>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <noscript>
+      <p class="noscript">这个工作台需要 JavaScript。请启用后重新打开页面。</p>
+    </noscript>
+
+    <!-- Host adapters: set window.workbenchHost before host.js, or wrap the
+         web adapter after host.js and before app.js. See adapters/README.md. -->
+    <script src="host.js"></script>
+    <script src="vendor/markdown-it.umd.min.js"></script>
+    <script src="markdown.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+

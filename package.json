@@ -1,0 +1,16 @@
+{
+  "name": "agent-workbench-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A host-agnostic starter kit for a personal workbench side panel: four modes, two rows of filters, a full-width list, a Markdown reader, and an editable annotation layer.",
+  "scripts": {
+    "start": "node server/server.mjs",
+    "check": "node --check server/server.mjs && node --check core/app.js && node --check core/host.js && node --check core/markdown.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
+

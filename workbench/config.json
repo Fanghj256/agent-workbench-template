@@ -1,0 +1,80 @@
+{
+  "schema": "workbench-config/v1",
+  "title": "Agent 工作台",
+  "mark": "W",
+  "description": "一个可以照着改的侧栏工作台：4 个模式、两行筛选、全宽列表、Markdown 阅读与可编辑批注层。",
+  "libraryRoot": "workbench",
+  "port": 8787,
+  "labels": {
+    "today": "今日",
+    "library": "资料库",
+    "reports": "报告",
+    "settings": "设置",
+    "item": "条目",
+    "items": "条目",
+    "searchPlaceholder": "搜索标题、机构、文号或关键词",
+    "summary": "摘要",
+    "judgment": "判断",
+    "source": "原文",
+    "emptyTitle": "没有匹配的条目",
+    "emptyHint": "调整筛选条件，或清空搜索后再试。",
+    "clearFilters": "清空筛选",
+    "readOnly": "只读"
+  },
+  "dimensions": {
+    "primary": {
+      "field": "level",
+      "label": "层级"
+    },
+    "secondary": {
+      "field": "kind",
+      "label": "类型"
+    }
+  },
+  "types": [
+    "原文",
+    "解读",
+    "数据",
+    "申报",
+    "竞品",
+    "研究"
+  ],
+  "statuses": [
+    {
+      "label": "待研判",
+      "tone": "warn"
+    },
+    {
+      "label": "在跟",
+      "tone": "info"
+    },
+    {
+      "label": "已研判",
+      "tone": "ok"
+    },
+    {
+      "label": "已归档",
+      "tone": "muted"
+    }
+  ],
+  "today": {
+    "referenceDate": "latest",
+    "recentDays": 14,
+    "deadlineDays": 7,
+    "pendingStatuses": [
+      "待研判"
+    ],
+    "focusCount": 3
+  },
+  "reports": {
+    "label": "报告",
+    "types": [
+      "日报",
+      "周报",
+      "月报",
+      "专题",
+      "复盘"
+    ]
+  }
+}
+
