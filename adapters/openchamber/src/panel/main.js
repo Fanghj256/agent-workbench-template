@@ -8,7 +8,7 @@ const INDEX_PATH = LIB_ROOT + '/index.json';
 const REPORTS_PATH = LIB_ROOT + '/reports.json';
 const ANNOTATIONS_PATH = LIB_ROOT + '/annotations.json';
 const NOTES_DIR = LIB_ROOT + '/_notes';
-const LOCAL_BASE = 'http://127.0.0.1:8787/';
+const LOCAL_PORT_FALLBACK = 8787;
 
 // 预览时按扩展页面的相对位置读取仓库根目录下的数据
 const PREVIEW_CONFIG = '../../../workbench/config.json';
@@ -768,12 +768,12 @@ function renderSettings() {
   ]));
 
   wrap.append(settingCard('本地原件', [
-    ['服务地址', LOCAL_BASE],
+    ['服务地址', localBase()],
     ['启动方式', '在模板仓库根目录运行 node server/server.mjs'],
     ['显示条件', '条目带有 original_path 时才显示“本地原件”'],
     ['说明', 'PDF/HTML 通过本机服务打开；未启动时链接无法访问。'],
   ], [
-    settingsButton('复制服务地址', () => void copyText(LOCAL_BASE)),
+    settingsButton('复制服务地址', () => void copyText(localBase())),
   ]));
 
   wrap.append(settingCard('Agent 工具', [
@@ -951,9 +951,15 @@ function renderDetail(doc) {
 
 /* ---------- content ---------- */
 
+function localBase() {
+  const configured = Number(state.config && state.config.port);
+  const port = Number.isFinite(configured) && configured > 0 ? configured : LOCAL_PORT_FALLBACK;
+  return 'http://127.0.0.1:' + port + '/';
+}
+
 function localOriginalUrl(path) {
   const clean = String(path || '').replace(/^\/+/, '');
-  return LOCAL_BASE + encodeURI(clean);
+  return localBase() + encodeURI(clean);
 }
 
 async function readProjectFile(path, previewPath) {
@@ -1397,7 +1403,7 @@ els.main.addEventListener('click', (event) => {
   const href = anchor.getAttribute('href');
   if (!href || href.charAt(0) === '#') return;
   event.preventDefault();
-  if (/^https?:\/\//i.test(href) || href.indexOf(LOCAL_BASE) === 0) {
+  if (/^https?:\/\//i.test(href) || href.indexOf(localBase()) === 0) {
     void openUrl(href);
   } else {
     toast('暂不打开链接：' + href);

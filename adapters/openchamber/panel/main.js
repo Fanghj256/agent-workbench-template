@@ -6987,7 +6987,7 @@
   var REPORTS_PATH = LIB_ROOT + "/reports.json";
   var ANNOTATIONS_PATH = LIB_ROOT + "/annotations.json";
   var NOTES_DIR = LIB_ROOT + "/_notes";
-  var LOCAL_BASE = "http://127.0.0.1:8787/";
+  var LOCAL_PORT_FALLBACK = 8787;
   var PREVIEW_CONFIG = "../../../workbench/config.json";
   var PREVIEW_INDEX = "../../../workbench/index.json";
   var PREVIEW_REPORTS = "../../../workbench/reports.json";
@@ -7654,12 +7654,12 @@
       settingsButton("\u590D\u5236\u542F\u52A8\u547D\u4EE4", () => void copyText("node server/server.mjs"))
     ]));
     wrap.append(settingCard("\u672C\u5730\u539F\u4EF6", [
-      ["\u670D\u52A1\u5730\u5740", LOCAL_BASE],
+      ["\u670D\u52A1\u5730\u5740", localBase()],
       ["\u542F\u52A8\u65B9\u5F0F", "\u5728\u6A21\u677F\u4ED3\u5E93\u6839\u76EE\u5F55\u8FD0\u884C node server/server.mjs"],
       ["\u663E\u793A\u6761\u4EF6", "\u6761\u76EE\u5E26\u6709 original_path \u65F6\u624D\u663E\u793A\u201C\u672C\u5730\u539F\u4EF6\u201D"],
       ["\u8BF4\u660E", "PDF/HTML \u901A\u8FC7\u672C\u673A\u670D\u52A1\u6253\u5F00\uFF1B\u672A\u542F\u52A8\u65F6\u94FE\u63A5\u65E0\u6CD5\u8BBF\u95EE\u3002"]
     ], [
-      settingsButton("\u590D\u5236\u670D\u52A1\u5730\u5740", () => void copyText(LOCAL_BASE))
+      settingsButton("\u590D\u5236\u670D\u52A1\u5730\u5740", () => void copyText(localBase()))
     ]));
     wrap.append(settingCard("Agent \u5DE5\u5177", [
       ["\u5DE5\u4F5C\u53F0", "workbench_list / workbench_read / workbench_write"],
@@ -7813,9 +7813,14 @@
     wrap.append(bar);
     return wrap;
   }
+  function localBase() {
+    const configured = Number(state.config && state.config.port);
+    const port = Number.isFinite(configured) && configured > 0 ? configured : LOCAL_PORT_FALLBACK;
+    return "http://127.0.0.1:" + port + "/";
+  }
   function localOriginalUrl(path) {
     const clean = String(path || "").replace(/^\/+/, "");
-    return LOCAL_BASE + encodeURI(clean);
+    return localBase() + encodeURI(clean);
   }
   async function readProjectFile(path, previewPath) {
     try {
@@ -8194,7 +8199,7 @@
     const href = anchor.getAttribute("href");
     if (!href || href.charAt(0) === "#") return;
     event.preventDefault();
-    if (/^https?:\/\//i.test(href) || href.indexOf(LOCAL_BASE) === 0) {
+    if (/^https?:\/\//i.test(href) || href.indexOf(localBase()) === 0) {
       void openUrl(href);
     } else {
       toast("\u6682\u4E0D\u6253\u5F00\u94FE\u63A5\uFF1A" + href);
