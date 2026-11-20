@@ -22,4 +22,5 @@ jobs:
         run: |
           npm run check
           npm run check:manifest --prefix adapters/openchamber
+          npm run check:parity --prefix adapters/openchamber
           npm run test:plugin --prefix adapters/openchamber

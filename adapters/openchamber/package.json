@@ -33,6 +33,7 @@
     "check": "node --check panel/main.js && node --check plugin/index.js",
     "check:manifest": "node scripts/check-manifest.mjs",
     "check:build": "npm run build && git diff --exit-code -- panel/main.js",
+    "check:parity": "node scripts/check-shared.mjs",
     "test:plugin": "node scripts/test-plugin.mjs"
   },
   "devDependencies": {

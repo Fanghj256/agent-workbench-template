@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server/server.mjs",
     "check": "node --check server/server.mjs && node --check core/app.js && node --check core/host.js && node --check core/markdown.js && node --check adapters/openchamber/panel/main.js",
-    "test": "npm run check && npm --prefix adapters/openchamber run check && npm --prefix adapters/openchamber run check:manifest && npm --prefix adapters/openchamber run test:plugin"
+    "test": "npm run check && npm --prefix adapters/openchamber run check && npm --prefix adapters/openchamber run check:manifest && npm --prefix adapters/openchamber run check:parity && npm --prefix adapters/openchamber run test:plugin"
   },
   "engines": {
     "node": ">=18"
