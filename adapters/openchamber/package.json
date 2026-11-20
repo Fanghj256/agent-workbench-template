@@ -32,6 +32,7 @@
     "build": "esbuild src/panel/main.js --bundle --format=iife --platform=browser --outfile=panel/main.js",
     "check": "node --check panel/main.js && node --check plugin/index.js",
     "check:manifest": "node scripts/check-manifest.mjs",
+    "check:build": "npm run build && git diff --exit-code -- panel/main.js",
     "test:plugin": "node scripts/test-plugin.mjs"
   },
   "devDependencies": {

@@ -1,0 +1,25 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: adapters/openchamber/package-lock.json
+      - name: Install adapter dependencies
+        run: npm ci --prefix adapters/openchamber
+      - name: Rebuild bundle and fail on drift
+        run: npm run check:build --prefix adapters/openchamber
+      - name: Syntax and plugin checks
+        run: |
+          npm run check
+          npm run check:manifest --prefix adapters/openchamber
+          npm run test:plugin --prefix adapters/openchamber
