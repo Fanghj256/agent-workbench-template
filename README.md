@@ -4,6 +4,8 @@
 
 # Agent Workbench Template
 
+**中文** | [English](README.en.md)
+
 一个放进 Agent 侧栏就能用的轻量工作台模板。不需要编译打包，起一个静态服务就能跑，把“看列表、筛条件、读原文、写批注”这一层先搭稳。
 
 `Node 18+` · `零构建依赖` · `支持 OpenChamber / Web / DSH / OpenCode`
